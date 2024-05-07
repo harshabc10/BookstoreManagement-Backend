@@ -1,0 +1,11 @@
+D:\C#(LYTX)\BookStoreManagement\ModelLayer\bin\Debug\net8.0\ModelLayer.deps.json
+D:\C#(LYTX)\BookStoreManagement\ModelLayer\bin\Debug\net8.0\ModelLayer.dll
+D:\C#(LYTX)\BookStoreManagement\ModelLayer\bin\Debug\net8.0\ModelLayer.pdb
+D:\C#(LYTX)\BookStoreManagement\ModelLayer\obj\Debug\net8.0\ModelLayer.GeneratedMSBuildEditorConfig.editorconfig
+D:\C#(LYTX)\BookStoreManagement\ModelLayer\obj\Debug\net8.0\ModelLayer.AssemblyInfoInputs.cache
+D:\C#(LYTX)\BookStoreManagement\ModelLayer\obj\Debug\net8.0\ModelLayer.AssemblyInfo.cs
+D:\C#(LYTX)\BookStoreManagement\ModelLayer\obj\Debug\net8.0\ModelLayer.csproj.CoreCompileInputs.cache
+D:\C#(LYTX)\BookStoreManagement\ModelLayer\obj\Debug\net8.0\ModelLayer.dll
+D:\C#(LYTX)\BookStoreManagement\ModelLayer\obj\Debug\net8.0\refint\ModelLayer.dll
+D:\C#(LYTX)\BookStoreManagement\ModelLayer\obj\Debug\net8.0\ModelLayer.pdb
+D:\C#(LYTX)\BookStoreManagement\ModelLayer\obj\Debug\net8.0\ref\ModelLayer.dll
