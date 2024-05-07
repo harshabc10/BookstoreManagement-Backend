@@ -1,0 +1,144 @@
+CREATE DATABASE BookstoreDB;
+
+USE BookstoreDB;
+
+drop table Users
+
+CREATE TABLE Users (
+    UserId INT PRIMARY KEY IDENTITY,
+    UserFirstName NVARCHAR(50),
+    UserEmail NVARCHAR(100) UNIQUE,
+    UserPassword NVARCHAR(50),
+	UserPhone NVARCHAR(20)
+
+);
+
+
+select * from Users
+
+
+drop procedure sp_CreateUser
+
+
+CREATE PROCEDURE sp_GetUserByEmail
+    @Email NVARCHAR(100)
+AS
+BEGIN
+    SELECT * FROM Users WHERE UserEmail = @Email;
+END;
+
+
+
+CREATE PROCEDURE sp_UpdatePassword
+    @Email NVARCHAR(100),
+    @Password NVARCHAR(100)
+AS
+BEGIN
+    UPDATE Users SET UserPassword = @Password WHERE UserEmail = @Email;
+    SELECT @@ROWCOUNT AS RowsAffected;
+END;
+
+
+create PROCEDURE sp_CreateUser
+    @UserFirstName NVARCHAR(50),
+    @UserEmail NVARCHAR(100),
+    @UserPassword NVARCHAR(100),
+    @UserPhone NVARCHAR(20) -- Add the parameter for UserPhone
+AS
+BEGIN
+    INSERT INTO Users (UserFirstName, UserEmail, UserPassword, UserPhone)
+    VALUES (@UserFirstName, @UserEmail, @UserPassword, @UserPhone);
+
+    SELECT SCOPE_IDENTITY() AS UserId;
+END
+
+CREATE TABLE Books (
+    BookId INT IDENTITY(1,1) PRIMARY KEY,
+    Title NVARCHAR(255) NOT NULL,
+    Author NVARCHAR(255) NOT NULL,
+    Price DECIMAL(18,2) NOT NULL,
+    Description NVARCHAR(MAX),
+    Quantity INT NOT NULL,
+    ImagePath NVARCHAR(1000)
+);
+
+UPDATE Books
+SET Quantity = 28
+WHERE BookId = 2;
+
+
+select * from Books
+
+drop table Books
+
+drop procedure sp_UpdateBook
+
+CREATE PROCEDURE sp_AddBook
+    @Title NVARCHAR(255),
+    @Author NVARCHAR(255),
+    @Price DECIMAL(18, 2),
+    @Description NVARCHAR(MAX),
+    @ImagePath NVARCHAR(1000),
+    @Quantity INT
+AS
+BEGIN
+    INSERT INTO Books (Title, Author, Price, Description, ImagePath, Quantity)
+    VALUES (@Title, @Author, @Price, @Description, @ImagePath, @Quantity);
+END
+
+
+CREATE PROCEDURE sp_GetAllBooks
+AS
+BEGIN
+    SELECT * FROM Books;
+END
+
+
+
+CREATE PROCEDURE sp_UpdateBook
+    @Id INT,
+    @Title NVARCHAR(255),
+    @Author NVARCHAR(255),
+    @Price DECIMAL(10, 2),
+    @Description NVARCHAR(1000),
+    @ImagePath NVARCHAR(255),
+	@Quantity INT
+AS
+BEGIN
+    UPDATE Books
+    SET Title = @Title,
+        Author = @Author,
+        Price = @Price,
+        Description = @Description,
+        ImagePath = @ImagePath,
+		Quantity=@Quantity
+    WHERE BookId = @Id;
+END
+
+
+
+
+CREATE PROCEDURE sp_DeleteBook
+    @Id INT
+AS
+BEGIN
+    DELETE FROM Books
+    WHERE BookId = @Id;
+END
+
+
+CREATE TABLE CartItems (
+    Id INT PRIMARY KEY IDENTITY,
+    UserId INT NOT NULL,
+    BookId INT NOT NULL,
+    Quantity INT NOT NULL,
+    CONSTRAINT FK_UserId FOREIGN KEY (UserId) REFERENCES Users(UserId),
+    CONSTRAINT FK_BookId FOREIGN KEY (BookId) REFERENCES Books(BookId)
+);
+
+select * from CartItems
+
+SELECT b.BookId, b.Title, b.Author, b.Description, b.Price, b.ImagePath, ci.Quantity AS Quantity
+FROM CartItems ci 
+INNER JOIN Books b ON ci.BookId = b.BookId 
+WHERE ci.UserId = 3;
