@@ -37,7 +37,6 @@ namespace RepositoryLayer.Service
             }
         }
 
-
         public async Task<List<Book>> AddToCart(CartRequest cartRequest, int userId)
         {
             // Assuming there's a table named CartItems with columns: Id, UserId, BookId, Quantity
