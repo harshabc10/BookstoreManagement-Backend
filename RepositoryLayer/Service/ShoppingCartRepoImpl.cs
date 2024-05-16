@@ -6,6 +6,7 @@ using RepositoryLayer.Interface;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Data.Common;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -23,8 +24,11 @@ namespace RepositoryLayer.Service
 
         public async Task<List<Book>> GetCartBooks(int userId)
         {
-            // Assuming there's a table named CartItems with columns: Id, UserId, BookId, Quantity
-            string query = "SELECT b.* FROM CartItems ci INNER JOIN Books b ON ci.BookId = b.BookId WHERE ci.UserId = @UserId";
+            string query = @"
+        SELECT b.BookId, b.Title, b.Author, b.Description, b.Price, b.ImagePath, ci.Quantity AS Quantity
+        FROM CartItems ci 
+        INNER JOIN Books b ON ci.BookId = b.BookId 
+        WHERE ci.UserId = @UserId";
 
             using (var connection = _context.CreateConnection())
             {
@@ -32,6 +36,7 @@ namespace RepositoryLayer.Service
                 return cartBooks.ToList();
             }
         }
+
 
         public async Task<List<Book>> AddToCart(CartRequest cartRequest, int userId)
         {
@@ -73,13 +78,24 @@ namespace RepositoryLayer.Service
         public async Task<bool> DeleteCart(int userId, int id)
         {
             // Assuming there's a table named CartItems with columns: Id, UserId, BookId, Quantity
-            string deleteQuery = "DELETE FROM CartItems WHERE UserId = @UserId AND Id = @Id";
+            string deleteQuery = "DELETE FROM CartItems WHERE  UserId = @UserId AND BookId = @BookId";
             using (var connection = _context.CreateConnection())
             {
-                await connection.ExecuteAsync(deleteQuery, new { UserId = userId, Id = id });
+                await connection.ExecuteAsync(deleteQuery, new { UserId = userId, BookId = id });
 
                 // Check if any rows were affected
                 return await IsCartItemExists(userId, id);
+            }
+        }
+
+        public async Task<List<BookWithQuantity>> GetCartItemsByUserId(int userId)
+        {
+            string query = @"SELECT * FROM CartItems WHERE UserId = @UserId";
+
+            using (var connection = _context.CreateConnection())
+            {
+                var cartItems = await connection.QueryAsync<BookWithQuantity>(query, new { UserId = userId });
+                return cartItems.ToList();
             }
         }
 
@@ -92,5 +108,7 @@ namespace RepositoryLayer.Service
                 return count > 0;
             }
         }
+
+
     }
 }

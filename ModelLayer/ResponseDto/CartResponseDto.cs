@@ -8,6 +8,7 @@ namespace ModelLayer.ResponseDto
 {
     public class CartResponseDto
     {
+
         public int CartId { get; set; }
         public int UserId { get; set; }
         public int BookId { get; set; }

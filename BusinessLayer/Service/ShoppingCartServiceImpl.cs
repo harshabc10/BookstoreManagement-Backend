@@ -21,6 +21,18 @@ namespace BusinessLayer.Service
             return await _shoppingCartRepository.GetCartBooks(userId);
         }
 
+/*        public async Task<List<BookWithQuantity>> GetCartBooksWithQuantities(int userId)
+        {
+            var cartItems = await _shoppingCartRepository.GetCartItemsByUserId(userId);
+
+            return cartItems.Select(item => new BookWithQuantity
+            {
+                Book = item.Book, // Assuming you have a Book property in your CartItem model
+                Quantity = item.Quantity // Assuming quantity is part of the cart item
+            }).ToList();
+        }*/
+
+
         public async Task<List<Book>> AddToCart(CartRequest cartRequest, int userId)
         {
             return await _shoppingCartRepository.AddToCart(cartRequest, userId);

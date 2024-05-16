@@ -35,7 +35,8 @@ namespace BusinessLayer.Service
             {
                 UserFirstName = request.FirstName,
                 UserEmail = request.Email,
-                UserPassword = Encrypt(request.Password)
+                UserPassword = Encrypt(request.Password),
+                UserPhone=request.Phone
             };
         }
 
@@ -58,7 +59,8 @@ namespace BusinessLayer.Service
             {
                 FirstName = response.UserFirstName,
                 Email = response.UserEmail,
-                Id = response.UserId
+                Id = response.UserId,
+                Phone=response.UserPhone
             };
         }
 

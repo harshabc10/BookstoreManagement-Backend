@@ -9,3 +9,4 @@ D:\C#(LYTX)\BookStoreManagement\ModelLayer\obj\Debug\net8.0\ModelLayer.dll
 D:\C#(LYTX)\BookStoreManagement\ModelLayer\obj\Debug\net8.0\refint\ModelLayer.dll
 D:\C#(LYTX)\BookStoreManagement\ModelLayer\obj\Debug\net8.0\ModelLayer.pdb
 D:\C#(LYTX)\BookStoreManagement\ModelLayer\obj\Debug\net8.0\ref\ModelLayer.dll
+D:\C#(LYTX)\BookStoreManagement\ModelLayer\obj\Debug\net8.0\ModelLayer.sourcelink.json

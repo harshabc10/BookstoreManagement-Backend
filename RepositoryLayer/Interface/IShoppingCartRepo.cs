@@ -13,6 +13,7 @@ namespace RepositoryLayer.Interface
         Task<List<Book>> GetCartBooks(int userId);
         Task<List<Book>> AddToCart(CartRequest cartRequest, int userId);
         /* Task<double> GetPrice(int userId);*/
+/*        Task<List<BookWithQuantity>> GetCartItemsByUserId(int userId);  */
         Task<CartRequest> UpdateQuantity(int userId, CartRequest cartRequest);
         Task<bool> DeleteCart(int userId,int id);
     }

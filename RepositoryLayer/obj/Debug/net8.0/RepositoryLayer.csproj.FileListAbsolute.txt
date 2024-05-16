@@ -13,3 +13,4 @@ D:\C#(LYTX)\BookStoreManagement\RepositoryLayer\obj\Debug\net8.0\RepositoryLayer
 D:\C#(LYTX)\BookStoreManagement\RepositoryLayer\obj\Debug\net8.0\refint\RepositoryLayer.dll
 D:\C#(LYTX)\BookStoreManagement\RepositoryLayer\obj\Debug\net8.0\RepositoryLayer.pdb
 D:\C#(LYTX)\BookStoreManagement\RepositoryLayer\obj\Debug\net8.0\ref\RepositoryLayer.dll
+D:\C#(LYTX)\BookStoreManagement\RepositoryLayer\obj\Debug\net8.0\RepositoryLayer.sourcelink.json

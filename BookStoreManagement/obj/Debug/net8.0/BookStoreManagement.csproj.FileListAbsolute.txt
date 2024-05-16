@@ -54,3 +54,4 @@ D:\C#(LYTX)\BookStoreManagement\BookStoreManagement\obj\Debug\net8.0\refint\Book
 D:\C#(LYTX)\BookStoreManagement\BookStoreManagement\obj\Debug\net8.0\BookStoreManagement.pdb
 D:\C#(LYTX)\BookStoreManagement\BookStoreManagement\obj\Debug\net8.0\BookStoreManagement.genruntimeconfig.cache
 D:\C#(LYTX)\BookStoreManagement\BookStoreManagement\obj\Debug\net8.0\ref\BookStoreManagement.dll
+D:\C#(LYTX)\BookStoreManagement\BookStoreManagement\obj\Debug\net8.0\BookStoreManagement.sourcelink.json
