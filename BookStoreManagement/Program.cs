@@ -10,6 +10,8 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddHttpContextAccessor();
+
 // Add services to the container.
 
 // Add services to the container. for user login
@@ -24,6 +26,14 @@ builder.Services.AddScoped<IBookService, BookServiceImpl>();
 //cart
 builder.Services.AddTransient<IShoppingCartService, ShoppingCartServiceImpl>();
 builder.Services.AddScoped<IShoppingCartRepo, ShoppingCartRepository>();
+
+//address
+builder.Services.AddScoped<IAddressService, AddressServiceImpl>();
+builder.Services.AddScoped<IAddressRepo, AddressRepoImpl>();
+
+//wishlist
+builder.Services.AddScoped<IWishlistRepo, WishlistRepoImpl>();
+builder.Services.AddScoped<IWishlistService, WishlistServiceImpl>();
 
 //cors
 builder.Services.AddCors(options =>
