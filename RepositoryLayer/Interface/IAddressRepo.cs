@@ -1,4 +1,5 @@
 ﻿using ModelLayer.Entity;
+using ModelLayer.RequestDto;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,7 +10,7 @@ namespace RepositoryLayer.Interface
 {
     public  interface IAddressRepo
     {
-        Task<IEnumerable<Address>> GetAddresses(int userId);
+        Task<IEnumerable<AddressWithUserDetails>> GetAddresses(int userId);
         Task<Address> GetAddressById(int addressId);
         Task AddAddress(Address address);
         Task UpdateAddress(Address address);

@@ -10,7 +10,7 @@ namespace BusinessLayer.Interface
 {
     public interface IAddressService
     {
-        Task<IEnumerable<Address>> GetAddresses(int userId);
+        Task<IEnumerable<AddressWithUserDetails>> GetAddresses(int userId);
         Task<Address> GetAddressById(int addressId);
         Task AddAddress(AddressRequest addressRequest, int userId);
         Task UpdateAddress(int addressId, AddressRequest addressRequest, int userId);

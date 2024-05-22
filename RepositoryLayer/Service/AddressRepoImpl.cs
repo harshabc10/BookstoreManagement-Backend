@@ -1,5 +1,6 @@
 ﻿using Dapper;
 using ModelLayer.Entity;
+using ModelLayer.RequestDto;
 using RepositoryLayer.Context;
 using RepositoryLayer.Interface;
 using System;
@@ -19,12 +20,16 @@ namespace RepositoryLayer.Service
             _context = context;
         }
 
-        public async Task<IEnumerable<Address>> GetAddresses(int userId)
+        public async Task<IEnumerable<AddressWithUserDetails>> GetAddresses(int userId)
         {
-            var sql = "SELECT * FROM Addresses WHERE UserId = @UserId";
+            var sql = @"
+        SELECT a.*, u.UserFirstName, u.UserPhone 
+        FROM Addresses a
+        JOIN Users u ON a.UserId = u.UserId
+        WHERE a.UserId = @UserId";
             using (var connection = _context.CreateConnection())
             {
-                return await connection.QueryAsync<Address>(sql, new { UserId = userId });
+                return await connection.QueryAsync<AddressWithUserDetails>(sql, new { UserId = userId });
             }
         }
 
@@ -57,6 +62,7 @@ namespace RepositoryLayer.Service
                 await connection.ExecuteAsync(sql, address);
             }
         }
+
 
         public async Task DeleteAddress(int addressId)
         {

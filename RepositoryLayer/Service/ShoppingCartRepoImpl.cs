@@ -39,27 +39,49 @@ namespace RepositoryLayer.Service
 
         public async Task<List<Book>> AddToCart(CartRequest cartRequest, int userId)
         {
-            // Assuming there's a table named CartItems with columns: Id, UserId, BookId, Quantity
-            string insertQuery = "INSERT INTO CartItems (UserId, BookId, Quantity) VALUES (@UserId, @BookId, @Quantity)";
-            using (var connection = _context.CreateConnection())
-            {
-                await connection.ExecuteAsync(insertQuery, new { UserId = userId, BookId = cartRequest.BookId, Quantity = cartRequest.Quantity });
+            // Check if the book is already in the cart
+            bool isBookInCart = await IsBookInCart(cartRequest.BookId, userId);
 
-                // Return updated cart items after insertion
-                return await GetCartBooks(userId);
+            if (!isBookInCart)
+            {
+                // Book is not in the cart, proceed with insertion
+                string insertQuery = "INSERT INTO CartItems (UserId, BookId, Quantity) VALUES (@UserId, @BookId, @Quantity)";
+                using (var connection = _context.CreateConnection())
+                {
+                    await connection.ExecuteAsync(insertQuery, new { UserId = userId, BookId = cartRequest.BookId, Quantity = cartRequest.Quantity });
+
+                    // Return updated cart items after insertion
+                    return await GetCartBooks(userId);
+                }
+            }
+            else
+            {
+                // Book is already in the cart, do not insert again
+                return await GetCartBooks(userId); // Return the current cart items
             }
         }
 
-      /*  public async Task<double> GetPrice(int userId)
+        private async Task<bool> IsBookInCart(int bookId, int userId)
         {
-            // Assuming there's a table named CartItems with columns: Id, UserId, BookId, Quantity
-            string query = "SELECT SUM(b.Price * ci.Quantity) FROM CartItems ci INNER JOIN Books b ON ci.BookId = b.Id WHERE ci.UserId = @UserId";
+            string query = "SELECT COUNT(*) FROM CartItems WHERE UserId = @UserId AND BookId = @BookId";
             using (var connection = _context.CreateConnection())
             {
-                var totalPrice = await connection.ExecuteScalarAsync<double>(query, new { UserId = userId });
-                return totalPrice;
+                int count = await connection.ExecuteScalarAsync<int>(query, new { UserId = userId, BookId = bookId });
+                return count > 0; // Returns true if book is already in the cart
             }
-        }*/
+        }
+
+
+        /*  public async Task<double> GetPrice(int userId)
+          {
+              // Assuming there's a table named CartItems with columns: Id, UserId, BookId, Quantity
+              string query = "SELECT SUM(b.Price * ci.Quantity) FROM CartItems ci INNER JOIN Books b ON ci.BookId = b.Id WHERE ci.UserId = @UserId";
+              using (var connection = _context.CreateConnection())
+              {
+                  var totalPrice = await connection.ExecuteScalarAsync<double>(query, new { UserId = userId });
+                  return totalPrice;
+              }
+          }*/
 
         public async Task<CartRequest> UpdateQuantity(int userId, CartRequest cartRequest)
         {

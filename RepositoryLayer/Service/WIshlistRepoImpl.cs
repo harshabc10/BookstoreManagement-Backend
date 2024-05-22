@@ -34,10 +34,18 @@ namespace RepositoryLayer.Service
 
         public async Task<Wishlist> AddToWishlist(WishlistRequest wishlistRequest, int userId)
         {
+            // Check if the book already exists in the wishlist for the user
+            var existingWishlist = await GetWishlistByBookAndUser(wishlistRequest.BookId, userId);
+            if (existingWishlist != null)
+            {
+                // Book already exists in the wishlist, return the existing wishlist item
+                return existingWishlist;
+            }
+
             var query = @"
-                INSERT INTO Wishlist (BookId, UserId) 
-                VALUES (@BookId, @UserId); 
-                SELECT CAST(SCOPE_IDENTITY() as int)";
+        INSERT INTO Wishlist (BookId, UserId) 
+        VALUES (@BookId, @UserId); 
+        SELECT CAST(SCOPE_IDENTITY() as int)";
 
             using (var connection = _context.CreateConnection())
             {
@@ -48,12 +56,24 @@ namespace RepositoryLayer.Service
             }
         }
 
-        public async Task<bool> DeleteWishlist(int userId, int wishlistId)
+        private async Task<Wishlist> GetWishlistByBookAndUser(int bookId, int userId)
         {
-            var query = "DELETE FROM Wishlist WHERE UserId = @UserId AND WishlistId = @WishlistId";
+            var query = "SELECT TOP 1 * FROM Wishlist WHERE BookId = @BookId AND UserId = @UserId";
             using (var connection = _context.CreateConnection())
             {
-                var result = await connection.ExecuteAsync(query, new { UserId = userId, WishlistId = wishlistId });
+                var parameters = new { BookId = bookId, UserId = userId };
+                var wishlist = await connection.QueryFirstOrDefaultAsync<Wishlist>(query, parameters);
+                return wishlist;
+            }
+        }
+
+
+        public async Task<bool> DeleteWishlist(int userId, int BookID)
+        {
+            var query = "DELETE FROM Wishlist WHERE UserId = @UserId AND BookId = @BookId";
+            using (var connection = _context.CreateConnection())
+            {
+                var result = await connection.ExecuteAsync(query, new { UserId = userId, BookId = BookID });
                 return result > 0;
             }
         }

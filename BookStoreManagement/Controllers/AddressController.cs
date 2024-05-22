@@ -29,7 +29,7 @@ namespace BookStoreManagement.Controllers
         {
             var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
             var addresses = await _addressService.GetAddresses(userId);
-            return Ok(new ResponseModel<IEnumerable<Address>>
+            return Ok(new ResponseModel<IEnumerable<AddressWithUserDetails>>
             {
                 Message = "Addresses retrieved successfully.",
                 Data = addresses
@@ -53,30 +53,35 @@ namespace BookStoreManagement.Controllers
                 Data = address
             });
         }
-
         [HttpPost]
         public async Task<IActionResult> AddAddress([FromBody] AddressRequest addressRequest)
         {
             var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
             await _addressService.AddAddress(addressRequest, userId);
 
-            return Ok(new ResponseModel<string>
+            // Fetch the added address
+            var addedAddress = await _addressService.GetAddresses(userId);
+
+            return Ok(new ResponseModel<IEnumerable<AddressWithUserDetails>>
             {
                 Message = "Address added successfully.",
-                Data = null
+                Data = addedAddress
             });
         }
 
         [HttpPut("{id}")]
-        public async Task<IActionResult> UpdateAddress(int id,[FromBody] AddressRequest addressRequest)
+        public async Task<IActionResult> UpdateAddress(int id, [FromBody] AddressRequest addressRequest)
         {
             var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
             await _addressService.UpdateAddress(id, addressRequest, userId);
 
-            return Ok(new ResponseModel<string>
+            // Fetch the updated address
+            var updatedAddress = await _addressService.GetAddressById(id);
+
+            return Ok(new ResponseModel<Address>
             {
                 Message = "Address updated successfully.",
-                Data = null
+                Data = updatedAddress
             });
         }
 

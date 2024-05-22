@@ -35,6 +35,11 @@ builder.Services.AddScoped<IAddressRepo, AddressRepoImpl>();
 builder.Services.AddScoped<IWishlistRepo, WishlistRepoImpl>();
 builder.Services.AddScoped<IWishlistService, WishlistServiceImpl>();
 
+//orders
+builder.Services.AddScoped<IOrderRepo, OrderRepoImpl>();
+builder.Services.AddScoped<IOrderService, OrderServiceImpl>();
+
+
 //cors
 builder.Services.AddCors(options =>
 {

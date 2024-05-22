@@ -19,7 +19,7 @@ namespace BusinessLayer.Service
             _addressRepository = addressRepository;
         }
 
-        public async Task<IEnumerable<Address>> GetAddresses(int userId)
+        public async Task<IEnumerable<AddressWithUserDetails>> GetAddresses(int userId)
         {
             return await _addressRepository.GetAddresses(userId);
         }
