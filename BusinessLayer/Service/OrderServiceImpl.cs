@@ -20,7 +20,7 @@ namespace BusinessLayer.Service
             _orderRepository = orderRepository;
         }
 
-        public async Task<OrderRequest> AddOrder(OrderRequest orderRequest, int userId)
+        public async Task<OrderResponse> AddOrder(OrderRequest orderRequest, int userId)
         {
             // Assuming AddOrder method in the repository returns OrderDetailsResponse
             return await _orderRepository.AddOrder(orderRequest, userId);

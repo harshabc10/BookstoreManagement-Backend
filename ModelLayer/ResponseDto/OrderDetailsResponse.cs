@@ -11,5 +11,7 @@ namespace ModelLayer.ResponseDto
     {
         public Order Order { get; set; }
         public List<BookWithOrderId> Books { get; set; }
+        public Address Address { get; set; }  // Add Address
+        public UserEntity User { get; set; }
     }
 }

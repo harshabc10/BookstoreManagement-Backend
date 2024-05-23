@@ -35,7 +35,7 @@ namespace BookStoreManagement.Controllers
             }
 
 
-            return Ok(new ResponseModel<OrderRequest>
+            return Ok(new ResponseModel<OrderResponse>
             {
                 Message = "Order added successfully.",
                 Data = addedOrder

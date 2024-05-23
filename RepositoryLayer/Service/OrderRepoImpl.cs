@@ -20,7 +20,7 @@ namespace RepositoryLayer.Service
             _context = context;
         }
 
-        public async Task<OrderRequest> AddOrder(OrderRequest order, int userId)
+        public async Task<OrderResponse> AddOrder(OrderRequest order, int userId)
         {
             var queryOrder = "INSERT INTO Orders (AddressId, UserId, OrderDate) VALUES (@AddressId, @UserId, @OrderDate); SELECT CAST(SCOPE_IDENTITY() as int)";
             var queryOrderBook = "INSERT INTO OrderBooks (OrderId, BookId) VALUES (@OrderId, @BookId)";
@@ -57,8 +57,9 @@ namespace RepositoryLayer.Service
                         transaction.Commit();
 
                         // Return the OrderDetailsResponse with AddressId and BookId
-                        return new OrderRequest
+                        return new OrderResponse
                         {
+                            OrderId = orderId,
                             AddressId = order.AddressId,
                             BookIds = order.BookIds
                         };
@@ -80,6 +81,8 @@ namespace RepositoryLayer.Service
         {
             var queryOrders = "SELECT * FROM Orders WHERE UserId = @UserId";
             var queryBooks = "SELECT b.*, ob.OrderId FROM Books b INNER JOIN OrderBooks ob ON b.BookId = ob.BookId WHERE ob.OrderId IN @OrderIds";
+            var queryAddresses = "SELECT * FROM Addresses WHERE AddressId IN @AddressIds";
+            var queryUsers = "SELECT * FROM Users WHERE UserId = @UserId";
 
             using (var connection = _context.CreateConnection())
             {
@@ -88,15 +91,20 @@ namespace RepositoryLayer.Service
 
                 var orderIds = orders.Select(o => o.OrderId).ToList();
                 var books = (await connection.QueryAsync<BookWithOrderId>(queryBooks, new { OrderIds = orderIds })).ToList();
+                var addressIds = orders.Select(o => o.AddressId).ToList();
+                var addresses = (await connection.QueryAsync<Address>(queryAddresses, new { AddressIds = addressIds })).ToDictionary(a => a.addressId);
+                var user = await connection.QuerySingleOrDefaultAsync<UserEntity>(queryUsers, new { UserId = userId });
 
                 var orderDetailsResponses = orders.Select(order => new OrderDetailsResponse
                 {
                     Order = order,
-                    Books = books.Where(b => b.OrderId == order.OrderId).ToList()
+                    Books = books.Where(b => b.OrderId == order.OrderId).ToList(),
+                    Address = addresses.ContainsKey(order.AddressId) ? addresses[order.AddressId] : null,
+                    User = user
                 }).ToList();
 
                 return orderDetailsResponses;
             }
         }
-    }
+}
 }

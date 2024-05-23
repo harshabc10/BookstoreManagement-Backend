@@ -10,7 +10,7 @@ namespace BusinessLayer.Interface
 {
     public interface IOrderService
     {
-        Task<OrderRequest> AddOrder(OrderRequest orderRequest, int userId);
+        Task<OrderResponse> AddOrder(OrderRequest orderRequest, int userId);
         Task<List<OrderDetailsResponse>> GetOrderDetails(int userId);
 
         //Task<OrderResponse> GetOrderById(int orderId);
