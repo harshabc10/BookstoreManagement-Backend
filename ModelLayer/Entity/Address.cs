@@ -15,5 +15,7 @@ namespace ModelLayer.Entity
         public String state { get; set; }
         public AddressType type { get; set; }
         public int userId { get; set; }
+        public string UserName { get; set; }  // New property
+        public string UserPhone { get; set; } // New property
     }
 }

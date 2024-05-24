@@ -19,7 +19,7 @@ namespace BusinessLayer.Service
             _addressRepository = addressRepository;
         }
 
-        public async Task<IEnumerable<AddressWithUserDetails>> GetAddresses(int userId)
+        public async Task<IEnumerable<Object>> GetAddresses(int userId)
         {
             return await _addressRepository.GetAddresses(userId);
         }
@@ -37,7 +37,9 @@ namespace BusinessLayer.Service
                 city = addressRequest.city,
                 state = addressRequest.state,
                 type = addressRequest.type,
-                userId = userId
+                userId = userId,
+                UserName=addressRequest.UserName,
+                UserPhone=addressRequest.UserPhone
             };
             await _addressRepository.AddAddress(address);
         }

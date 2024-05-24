@@ -5,8 +5,10 @@ using ModelLayer.ResponseDto;
 using RepositoryLayer.Context;
 using RepositoryLayer.Interface;
 using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Data.SqlClient;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace RepositoryLayer.Service
@@ -22,9 +24,6 @@ namespace RepositoryLayer.Service
 
         public async Task<OrderResponse> AddOrder(OrderRequest order, int userId)
         {
-            var queryOrder = "INSERT INTO Orders (AddressId, UserId, OrderDate) VALUES (@AddressId, @UserId, @OrderDate); SELECT CAST(SCOPE_IDENTITY() as int)";
-            var queryOrderBook = "INSERT INTO OrderBooks (OrderId, BookId) VALUES (@OrderId, @BookId)";
-
             using (var connection = _context.CreateConnection() as SqlConnection)
             {
                 if (connection == null)
@@ -38,25 +37,33 @@ namespace RepositoryLayer.Service
                 {
                     try
                     {
-                        var orderId = await connection.ExecuteScalarAsync<int>(queryOrder, new
-                        {
-                            order.AddressId,
-                            UserId = userId,
-                            OrderDate = DateTime.UtcNow
-                        }, transaction);
+                        var parameters = new DynamicParameters();
+                        parameters.Add("AddressId", order.AddressId);
+                        parameters.Add("UserId", userId);
+                        parameters.Add("OrderDate", DateTime.UtcNow);
+                        parameters.Add("OrderId", dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+                        await connection.ExecuteAsync(
+                            "sp_AddOrder",
+                            parameters,
+                            transaction: transaction,
+                            commandType: CommandType.StoredProcedure
+                        );
+
+                        var orderId = parameters.Get<int>("OrderId");
 
                         foreach (var bookId in order.BookIds)
                         {
-                            await connection.ExecuteAsync(queryOrderBook, new
-                            {
-                                OrderId = orderId,
-                                BookId = bookId
-                            }, transaction);
+                            await connection.ExecuteAsync(
+                                "sp_AddOrderBook",
+                                new { OrderId = orderId, BookId = bookId },
+                                transaction: transaction,
+                                commandType: CommandType.StoredProcedure
+                            );
                         }
 
                         transaction.Commit();
 
-                        // Return the OrderDetailsResponse with AddressId and BookId
                         return new OrderResponse
                         {
                             OrderId = orderId,
@@ -67,33 +74,44 @@ namespace RepositoryLayer.Service
                     catch (SqlException ex)
                     {
                         transaction.Rollback();
-                        // Log or handle the exception appropriately
                         throw new Exception("Error adding order. See inner exception for details.", ex);
                     }
                 }
             }
         }
 
-
-
-
         public async Task<List<OrderDetailsResponse>> GetOrderDetails(int userId)
         {
-            var queryOrders = "SELECT * FROM Orders WHERE UserId = @UserId";
-            var queryBooks = "SELECT b.*, ob.OrderId FROM Books b INNER JOIN OrderBooks ob ON b.BookId = ob.BookId WHERE ob.OrderId IN @OrderIds";
-            var queryAddresses = "SELECT * FROM Addresses WHERE AddressId IN @AddressIds";
-            var queryUsers = "SELECT * FROM Users WHERE UserId = @UserId";
-
             using (var connection = _context.CreateConnection())
             {
-                var orders = (await connection.QueryAsync<Order>(queryOrders, new { UserId = userId })).ToList();
+                var orders = (await connection.QueryAsync<Order>(
+                    "sp_GetOrdersByUserId",
+                    new { UserId = userId },
+                    commandType: CommandType.StoredProcedure
+                )).ToList();
+
                 if (orders == null || orders.Count == 0) return null;
 
                 var orderIds = orders.Select(o => o.OrderId).ToList();
-                var books = (await connection.QueryAsync<BookWithOrderId>(queryBooks, new { OrderIds = orderIds })).ToList();
                 var addressIds = orders.Select(o => o.AddressId).ToList();
-                var addresses = (await connection.QueryAsync<Address>(queryAddresses, new { AddressIds = addressIds })).ToDictionary(a => a.addressId);
-                var user = await connection.QuerySingleOrDefaultAsync<UserEntity>(queryUsers, new { UserId = userId });
+
+                var books = (await connection.QueryAsync<BookWithOrderId>(
+                    "sp_GetBooksByOrderIds",
+                    new { OrderIds = orderIds.ToDataTable("dbo.IntList") },
+                    commandType: CommandType.StoredProcedure
+                )).ToList();
+
+                var addresses = (await connection.QueryAsync<Address>(
+                    "sp_GetAddressesByAddressIds",
+                    new { AddressIds = addressIds.ToDataTable("dbo.IntList") },
+                    commandType: CommandType.StoredProcedure
+                )).ToDictionary(a => a.addressId);
+
+                var user = await connection.QuerySingleOrDefaultAsync<UserEntity>(
+                    "sp_GetUserByUserId",
+                    new { UserId = userId },
+                    commandType: CommandType.StoredProcedure
+                );
 
                 var orderDetailsResponses = orders.Select(order => new OrderDetailsResponse
                 {
@@ -106,5 +124,17 @@ namespace RepositoryLayer.Service
                 return orderDetailsResponses;
             }
         }
-}
+    }
+
+    public static class Extensions
+    {
+        public static DataTable ToDataTable(this List<int> ids, string typeName)
+        {
+            var table = new DataTable();
+            table.Columns.Add("Id", typeof(int));
+            ids.ForEach(id => table.Rows.Add(id));
+            table.SetTypeName(typeName);
+            return table;
+        }
+    }
 }

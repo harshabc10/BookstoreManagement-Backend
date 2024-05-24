@@ -10,7 +10,7 @@ namespace RepositoryLayer.Interface
 {
     public  interface IAddressRepo
     {
-        Task<IEnumerable<AddressWithUserDetails>> GetAddresses(int userId);
+        Task<IEnumerable<Object>> GetAddresses(int userId);
         Task<Address> GetAddressById(int addressId);
         Task AddAddress(Address address);
         Task UpdateAddress(Address address);

@@ -29,7 +29,7 @@ namespace BookStoreManagement.Controllers
         {
             var userId = int.Parse(User.FindFirst(ClaimTypes.NameIdentifier)?.Value);
             var addresses = await _addressService.GetAddresses(userId);
-            return Ok(new ResponseModel<IEnumerable<AddressWithUserDetails>>
+            return Ok(new ResponseModel<IEnumerable<Object>>
             {
                 Message = "Addresses retrieved successfully.",
                 Data = addresses
@@ -62,7 +62,7 @@ namespace BookStoreManagement.Controllers
             // Fetch the added address
             var addedAddress = await _addressService.GetAddresses(userId);
 
-            return Ok(new ResponseModel<IEnumerable<AddressWithUserDetails>>
+            return Ok(new ResponseModel<IEnumerable<Object>>
             {
                 Message = "Address added successfully.",
                 Data = addedAddress

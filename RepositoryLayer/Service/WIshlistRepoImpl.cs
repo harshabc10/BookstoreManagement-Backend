@@ -4,6 +4,7 @@ using ModelLayer.RequestDto;
 using RepositoryLayer.Context;
 using RepositoryLayer.Interface;
 using System.Collections.Generic;
+using System.Data;
 using System.Threading.Tasks;
 
 namespace RepositoryLayer.Service
@@ -19,15 +20,13 @@ namespace RepositoryLayer.Service
 
         public async Task<List<Book>> GetWishlistBooks(int userId)
         {
-            var query = @"
-                SELECT b.* 
-                FROM Wishlist w
-                JOIN Books b ON w.BookId = b.BookId
-                WHERE w.UserId = @UserId";
-
             using (var connection = _context.CreateConnection())
             {
-                var result = await connection.QueryAsync<Book>(query, new { UserId = userId });
+                var result = await connection.QueryAsync<Book>(
+                    "sp_GetWishlistBooks",
+                    new { UserId = userId },
+                    commandType: CommandType.StoredProcedure
+                );
                 return result.AsList();
             }
         }
@@ -42,15 +41,20 @@ namespace RepositoryLayer.Service
                 return existingWishlist;
             }
 
-            var query = @"
-        INSERT INTO Wishlist (BookId, UserId) 
-        VALUES (@BookId, @UserId); 
-        SELECT CAST(SCOPE_IDENTITY() as int)";
-
             using (var connection = _context.CreateConnection())
             {
-                var parameters = new { BookId = wishlistRequest.BookId, UserId = userId };
-                var wishlistId = await connection.ExecuteScalarAsync<int>(query, parameters);
+                var parameters = new DynamicParameters();
+                parameters.Add("BookId", wishlistRequest.BookId);
+                parameters.Add("UserId", userId);
+                parameters.Add("WishlistId", dbType: DbType.Int32, direction: ParameterDirection.Output);
+
+                await connection.ExecuteAsync(
+                    "sp_AddToWishlist",
+                    parameters,
+                    commandType: CommandType.StoredProcedure
+                );
+
+                var wishlistId = parameters.Get<int>("WishlistId");
                 var addedWishlist = new Wishlist { WishlistId = wishlistId, BookId = wishlistRequest.BookId, UserId = userId };
                 return addedWishlist;
             }
@@ -58,22 +62,27 @@ namespace RepositoryLayer.Service
 
         private async Task<Wishlist> GetWishlistByBookAndUser(int bookId, int userId)
         {
-            var query = "SELECT TOP 1 * FROM Wishlist WHERE BookId = @BookId AND UserId = @UserId";
             using (var connection = _context.CreateConnection())
             {
                 var parameters = new { BookId = bookId, UserId = userId };
-                var wishlist = await connection.QueryFirstOrDefaultAsync<Wishlist>(query, parameters);
+                var wishlist = await connection.QueryFirstOrDefaultAsync<Wishlist>(
+                    "sp_GetWishlistByBookAndUser",
+                    parameters,
+                    commandType: CommandType.StoredProcedure
+                );
                 return wishlist;
             }
         }
 
-
-        public async Task<bool> DeleteWishlist(int userId, int BookID)
+        public async Task<bool> DeleteWishlist(int userId, int bookId)
         {
-            var query = "DELETE FROM Wishlist WHERE UserId = @UserId AND BookId = @BookId";
             using (var connection = _context.CreateConnection())
             {
-                var result = await connection.ExecuteAsync(query, new { UserId = userId, BookId = BookID });
+                var result = await connection.ExecuteAsync(
+                    "sp_DeleteWishlist",
+                    new { UserId = userId, BookId = bookId },
+                    commandType: CommandType.StoredProcedure
+                );
                 return result > 0;
             }
         }

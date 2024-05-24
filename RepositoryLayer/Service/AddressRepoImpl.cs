@@ -3,10 +3,8 @@ using ModelLayer.Entity;
 using ModelLayer.RequestDto;
 using RepositoryLayer.Context;
 using RepositoryLayer.Interface;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Data;
 using System.Threading.Tasks;
 
 namespace RepositoryLayer.Service
@@ -20,58 +18,72 @@ namespace RepositoryLayer.Service
             _context = context;
         }
 
-        public async Task<IEnumerable<AddressWithUserDetails>> GetAddresses(int userId)
+        public async Task<IEnumerable<Object>> GetAddresses(int userId)
         {
-            var sql = @"
-        SELECT a.*, u.UserFirstName, u.UserPhone 
-        FROM Addresses a
-        JOIN Users u ON a.UserId = u.UserId
-        WHERE a.UserId = @UserId";
             using (var connection = _context.CreateConnection())
             {
-                return await connection.QueryAsync<AddressWithUserDetails>(sql, new { UserId = userId });
+                var result = await connection.QueryAsync<Object>(
+                    "sp_GetAddresses",
+                    new { UserId = userId },
+                    commandType: CommandType.StoredProcedure
+                );
+                return result;
             }
         }
 
         public async Task<Address> GetAddressById(int addressId)
         {
-            var sql = "SELECT * FROM Addresses WHERE AddressId = @AddressId";
             using (var connection = _context.CreateConnection())
             {
-                return await connection.QueryFirstOrDefaultAsync<Address>(sql, new { AddressId = addressId });
+                var result = await connection.QueryFirstOrDefaultAsync<Address>(
+                    "sp_GetAddressById",
+                    new { AddressId = addressId },
+                    commandType: CommandType.StoredProcedure
+                );
+                return result;
             }
         }
 
         public async Task AddAddress(Address address)
         {
-            var sql = @"INSERT INTO Addresses (Address, City, State, Type, UserId) 
-                    VALUES (@Address, @City, @State, @Type, @UserId)";
+
+            var parameters = new DynamicParameters();
+            parameters.Add("Address", address.address);
+            parameters.Add("City", address.city);
+            parameters.Add("State", address.state);
+            parameters.Add("Type", address.type);
+            parameters.Add("UserId", address.userId);
+            parameters.Add("UserName", address.UserName);
+            parameters.Add("UserPhone", address.UserPhone);
             using (var connection = _context.CreateConnection())
             {
-                await connection.ExecuteAsync(sql, address);
+                await connection.ExecuteAsync("sp_AddAddress", parameters);
             }
         }
+
 
         public async Task UpdateAddress(Address address)
         {
-            var sql = @"UPDATE Addresses 
-                    SET Address = @Address, City = @City, State = @State, Type = @Type 
-                    WHERE AddressId = @AddressId and UserId=@UserId";
             using (var connection = _context.CreateConnection())
             {
-                await connection.ExecuteAsync(sql, address);
+                await connection.ExecuteAsync(
+                    "sp_UpdateAddress",
+                    address,
+                    commandType: CommandType.StoredProcedure
+                );
             }
         }
-
 
         public async Task DeleteAddress(int addressId)
         {
-            var sql = "DELETE FROM Addresses WHERE AddressId = @AddressId";
             using (var connection = _context.CreateConnection())
             {
-                await connection.ExecuteAsync(sql, new { AddressId = addressId });
+                await connection.ExecuteAsync(
+                    "sp_DeleteAddress",
+                    new { AddressId = addressId },
+                    commandType: CommandType.StoredProcedure
+                );
             }
         }
     }
-
 }

@@ -13,5 +13,7 @@ namespace ModelLayer.RequestDto
         public String city { get; set; }
         public String state { get; set; }
         public AddressType type { get; set; }
+        public string UserName { get; set; }  // New property
+        public string UserPhone { get; set; }
     }
 }
