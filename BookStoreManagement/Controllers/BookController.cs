@@ -1,4 +1,5 @@
 ﻿using BusinessLayer.Interface;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using ModelLayer.Entity;
 using ModelLayer.RequestDto;
@@ -11,6 +12,7 @@ namespace BookStoreManagement.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [EnableCors]
     public class BookController : ControllerBase
     {
         private readonly IBookService _bookService;

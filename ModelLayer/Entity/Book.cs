@@ -18,3 +18,5 @@ namespace ModelLayer.Entity
     }
 
 }
+
+//using this entity for add to card and get cart in sql for car quntity i have used the same same

@@ -10,6 +10,8 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Services.AddHttpContextAccessor();
+
 // Add services to the container.
 
 // Add services to the container. for user login
@@ -25,6 +27,31 @@ builder.Services.AddScoped<IBookService, BookServiceImpl>();
 builder.Services.AddTransient<IShoppingCartService, ShoppingCartServiceImpl>();
 builder.Services.AddScoped<IShoppingCartRepo, ShoppingCartRepository>();
 
+//address
+builder.Services.AddScoped<IAddressService, AddressServiceImpl>();
+builder.Services.AddScoped<IAddressRepo, AddressRepoImpl>();
+
+//wishlist
+builder.Services.AddScoped<IWishlistRepo, WishlistRepoImpl>();
+builder.Services.AddScoped<IWishlistService, WishlistServiceImpl>();
+
+//orders
+builder.Services.AddScoped<IOrderRepo, OrderRepoImpl>();
+builder.Services.AddScoped<IOrderService, OrderServiceImpl>();
+
+
+//cors
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowSpecificOrigin",
+        builder =>
+        {
+            builder.WithOrigins("http://localhost:51237", "https://localhost:7209")
+                   .AllowAnyMethod()
+                   .AllowAnyHeader()
+            .AllowAnyOrigin();
+        });
+});
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -98,6 +125,8 @@ builder.Services.AddAuthentication(options =>
 });
 
 var app = builder.Build();
+app.UseCors("AllowSpecificOrigin");
+app.UseCors();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

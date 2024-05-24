@@ -1,0 +1,634 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\C#(LYTX)\\BookStoreManagement\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1FF023D3-6C22-4066-9539-E30C4FD97829}|RepositoryLayer\\RepositoryLayer.csproj|d:\\c#(lytx)\\bookstoremanagement\\repositorylayer\\service\\shoppingcartrepoimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FF023D3-6C22-4066-9539-E30C4FD97829}|RepositoryLayer\\RepositoryLayer.csproj|solutionrelative:repositorylayer\\service\\shoppingcartrepoimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F21BE2B-DD4F-4ED2-A31A-352C7CD94834}|BookStoreManagement\\BookStoreManagement.csproj|d:\\c#(lytx)\\bookstoremanagement\\bookstoremanagement\\controllers\\shoppingcartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F21BE2B-DD4F-4ED2-A31A-352C7CD94834}|BookStoreManagement\\BookStoreManagement.csproj|solutionrelative:bookstoremanagement\\controllers\\shoppingcartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FF023D3-6C22-4066-9539-E30C4FD97829}|RepositoryLayer\\RepositoryLayer.csproj|d:\\c#(lytx)\\bookstoremanagement\\repositorylayer\\service\\userrepoimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FF023D3-6C22-4066-9539-E30C4FD97829}|RepositoryLayer\\RepositoryLayer.csproj|solutionrelative:repositorylayer\\service\\userrepoimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9395FD82-D44C-490C-9540-08802F48A669}|BusinessLayer\\BusinessLayer.csproj|d:\\c#(lytx)\\bookstoremanagement\\businesslayer\\service\\shoppingcartserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9395FD82-D44C-490C-9540-08802F48A669}|BusinessLayer\\BusinessLayer.csproj|solutionrelative:businesslayer\\service\\shoppingcartserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B03AE655-2319-4854-9649-E90A3CD21CE1}|ModelLayer\\ModelLayer.csproj|d:\\c#(lytx)\\bookstoremanagement\\modellayer\\requestdto\\cartrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B03AE655-2319-4854-9649-E90A3CD21CE1}|ModelLayer\\ModelLayer.csproj|solutionrelative:modellayer\\requestdto\\cartrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FF023D3-6C22-4066-9539-E30C4FD97829}|RepositoryLayer\\RepositoryLayer.csproj|d:\\c#(lytx)\\bookstoremanagement\\repositorylayer\\service\\bookrepoimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FF023D3-6C22-4066-9539-E30C4FD97829}|RepositoryLayer\\RepositoryLayer.csproj|solutionrelative:repositorylayer\\service\\bookrepoimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9395FD82-D44C-490C-9540-08802F48A669}|BusinessLayer\\BusinessLayer.csproj|d:\\c#(lytx)\\bookstoremanagement\\businesslayer\\service\\userserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9395FD82-D44C-490C-9540-08802F48A669}|BusinessLayer\\BusinessLayer.csproj|solutionrelative:businesslayer\\service\\userserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F21BE2B-DD4F-4ED2-A31A-352C7CD94834}|BookStoreManagement\\BookStoreManagement.csproj|d:\\c#(lytx)\\bookstoremanagement\\bookstoremanagement\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F21BE2B-DD4F-4ED2-A31A-352C7CD94834}|BookStoreManagement\\BookStoreManagement.csproj|solutionrelative:bookstoremanagement\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B03AE655-2319-4854-9649-E90A3CD21CE1}|ModelLayer\\ModelLayer.csproj|d:\\c#(lytx)\\bookstoremanagement\\modellayer\\requestdto\\userrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B03AE655-2319-4854-9649-E90A3CD21CE1}|ModelLayer\\ModelLayer.csproj|solutionrelative:modellayer\\requestdto\\userrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B03AE655-2319-4854-9649-E90A3CD21CE1}|ModelLayer\\ModelLayer.csproj|d:\\c#(lytx)\\bookstoremanagement\\modellayer\\entity\\userentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B03AE655-2319-4854-9649-E90A3CD21CE1}|ModelLayer\\ModelLayer.csproj|solutionrelative:modellayer\\entity\\userentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F21BE2B-DD4F-4ED2-A31A-352C7CD94834}|BookStoreManagement\\BookStoreManagement.csproj|d:\\c#(lytx)\\bookstoremanagement\\bookstoremanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F21BE2B-DD4F-4ED2-A31A-352C7CD94834}|BookStoreManagement\\BookStoreManagement.csproj|solutionrelative:bookstoremanagement\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9395FD82-D44C-490C-9540-08802F48A669}|BusinessLayer\\BusinessLayer.csproj|d:\\c#(lytx)\\bookstoremanagement\\businesslayer\\businesslayer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{9395FD82-D44C-490C-9540-08802F48A669}|BusinessLayer\\BusinessLayer.csproj|solutionrelative:businesslayer\\businesslayer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F21BE2B-DD4F-4ED2-A31A-352C7CD94834}|BookStoreManagement\\BookStoreManagement.csproj|d:\\c#(lytx)\\bookstoremanagement\\bookstoremanagement\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6F21BE2B-DD4F-4ED2-A31A-352C7CD94834}|BookStoreManagement\\BookStoreManagement.csproj|solutionrelative:bookstoremanagement\\controllers\\bookcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B03AE655-2319-4854-9649-E90A3CD21CE1}|ModelLayer\\ModelLayer.csproj|d:\\c#(lytx)\\bookstoremanagement\\modellayer\\entity\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B03AE655-2319-4854-9649-E90A3CD21CE1}|ModelLayer\\ModelLayer.csproj|solutionrelative:modellayer\\entity\\book.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B03AE655-2319-4854-9649-E90A3CD21CE1}|ModelLayer\\ModelLayer.csproj|d:\\c#(lytx)\\bookstoremanagement\\modellayer\\responsedto\\bookresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B03AE655-2319-4854-9649-E90A3CD21CE1}|ModelLayer\\ModelLayer.csproj|solutionrelative:modellayer\\responsedto\\bookresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B03AE655-2319-4854-9649-E90A3CD21CE1}|ModelLayer\\ModelLayer.csproj|d:\\c#(lytx)\\bookstoremanagement\\modellayer\\requestdto\\bookwithquantity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B03AE655-2319-4854-9649-E90A3CD21CE1}|ModelLayer\\ModelLayer.csproj|solutionrelative:modellayer\\requestdto\\bookwithquantity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B03AE655-2319-4854-9649-E90A3CD21CE1}|ModelLayer\\ModelLayer.csproj|d:\\c#(lytx)\\bookstoremanagement\\modellayer\\responsedto\\cartresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B03AE655-2319-4854-9649-E90A3CD21CE1}|ModelLayer\\ModelLayer.csproj|solutionrelative:modellayer\\responsedto\\cartresponsedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FF023D3-6C22-4066-9539-E30C4FD97829}|RepositoryLayer\\RepositoryLayer.csproj|d:\\c#(lytx)\\bookstoremanagement\\repositorylayer\\interface\\ishoppingcartrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FF023D3-6C22-4066-9539-E30C4FD97829}|RepositoryLayer\\RepositoryLayer.csproj|solutionrelative:repositorylayer\\interface\\ishoppingcartrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9395FD82-D44C-490C-9540-08802F48A669}|BusinessLayer\\BusinessLayer.csproj|d:\\c#(lytx)\\bookstoremanagement\\businesslayer\\interface\\ishoppingcartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9395FD82-D44C-490C-9540-08802F48A669}|BusinessLayer\\BusinessLayer.csproj|solutionrelative:businesslayer\\interface\\ishoppingcartservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B03AE655-2319-4854-9649-E90A3CD21CE1}|ModelLayer\\ModelLayer.csproj|d:\\c#(lytx)\\bookstoremanagement\\modellayer\\requestdto\\bookrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B03AE655-2319-4854-9649-E90A3CD21CE1}|ModelLayer\\ModelLayer.csproj|solutionrelative:modellayer\\requestdto\\bookrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B03AE655-2319-4854-9649-E90A3CD21CE1}|ModelLayer\\ModelLayer.csproj|d:\\c#(lytx)\\bookstoremanagement\\modellayer\\requestdto\\addbookrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B03AE655-2319-4854-9649-E90A3CD21CE1}|ModelLayer\\ModelLayer.csproj|solutionrelative:modellayer\\requestdto\\addbookrequestdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B03AE655-2319-4854-9649-E90A3CD21CE1}|ModelLayer\\ModelLayer.csproj|d:\\c#(lytx)\\bookstoremanagement\\modellayer\\entity\\shoppingcartentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B03AE655-2319-4854-9649-E90A3CD21CE1}|ModelLayer\\ModelLayer.csproj|solutionrelative:modellayer\\entity\\shoppingcartentity.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9395FD82-D44C-490C-9540-08802F48A669}|BusinessLayer\\BusinessLayer.csproj|d:\\c#(lytx)\\bookstoremanagement\\businesslayer\\interface\\ibookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9395FD82-D44C-490C-9540-08802F48A669}|BusinessLayer\\BusinessLayer.csproj|solutionrelative:businesslayer\\interface\\ibookservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B03AE655-2319-4854-9649-E90A3CD21CE1}|ModelLayer\\ModelLayer.csproj|d:\\c#(lytx)\\bookstoremanagement\\modellayer\\responsedto\\responsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B03AE655-2319-4854-9649-E90A3CD21CE1}|ModelLayer\\ModelLayer.csproj|solutionrelative:modellayer\\responsedto\\responsemodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B03AE655-2319-4854-9649-E90A3CD21CE1}|ModelLayer\\ModelLayer.csproj|d:\\c#(lytx)\\bookstoremanagement\\modellayer\\responsedto\\userresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B03AE655-2319-4854-9649-E90A3CD21CE1}|ModelLayer\\ModelLayer.csproj|solutionrelative:modellayer\\responsedto\\userresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9395FD82-D44C-490C-9540-08802F48A669}|BusinessLayer\\BusinessLayer.csproj|d:\\c#(lytx)\\bookstoremanagement\\businesslayer\\interface\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9395FD82-D44C-490C-9540-08802F48A669}|BusinessLayer\\BusinessLayer.csproj|solutionrelative:businesslayer\\interface\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9395FD82-D44C-490C-9540-08802F48A669}|BusinessLayer\\BusinessLayer.csproj|d:\\c#(lytx)\\bookstoremanagement\\businesslayer\\service\\bookserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9395FD82-D44C-490C-9540-08802F48A669}|BusinessLayer\\BusinessLayer.csproj|solutionrelative:businesslayer\\service\\bookserviceimpl.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FF023D3-6C22-4066-9539-E30C4FD97829}|RepositoryLayer\\RepositoryLayer.csproj|d:\\c#(lytx)\\bookstoremanagement\\repositorylayer\\interface\\ibookrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FF023D3-6C22-4066-9539-E30C4FD97829}|RepositoryLayer\\RepositoryLayer.csproj|solutionrelative:repositorylayer\\interface\\ibookrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F21BE2B-DD4F-4ED2-A31A-352C7CD94834}|BookStoreManagement\\BookStoreManagement.csproj|d:\\c#(lytx)\\bookstoremanagement\\bookstoremanagement\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{6F21BE2B-DD4F-4ED2-A31A-352C7CD94834}|BookStoreManagement\\BookStoreManagement.csproj|solutionrelative:bookstoremanagement\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9395FD82-D44C-490C-9540-08802F48A669}|BusinessLayer\\BusinessLayer.csproj|d:\\c#(lytx)\\bookstoremanagement\\businesslayer\\mailsender\\mailsenderclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9395FD82-D44C-490C-9540-08802F48A669}|BusinessLayer\\BusinessLayer.csproj|solutionrelative:businesslayer\\mailsender\\mailsenderclass.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9395FD82-D44C-490C-9540-08802F48A669}|BusinessLayer\\BusinessLayer.csproj|d:\\c#(lytx)\\bookstoremanagement\\businesslayer\\customexception\\passwordmissmatchexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9395FD82-D44C-490C-9540-08802F48A669}|BusinessLayer\\BusinessLayer.csproj|solutionrelative:businesslayer\\customexception\\passwordmissmatchexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{9395FD82-D44C-490C-9540-08802F48A669}|BusinessLayer\\BusinessLayer.csproj|d:\\c#(lytx)\\bookstoremanagement\\businesslayer\\customexception\\usernotfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{9395FD82-D44C-490C-9540-08802F48A669}|BusinessLayer\\BusinessLayer.csproj|solutionrelative:businesslayer\\customexception\\usernotfoundexception.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FF023D3-6C22-4066-9539-E30C4FD97829}|RepositoryLayer\\RepositoryLayer.csproj|d:\\c#(lytx)\\bookstoremanagement\\repositorylayer\\interface\\iuserrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FF023D3-6C22-4066-9539-E30C4FD97829}|RepositoryLayer\\RepositoryLayer.csproj|solutionrelative:repositorylayer\\interface\\iuserrepo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FF023D3-6C22-4066-9539-E30C4FD97829}|RepositoryLayer\\RepositoryLayer.csproj|d:\\c#(lytx)\\bookstoremanagement\\repositorylayer\\context\\dappercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1FF023D3-6C22-4066-9539-E30C4FD97829}|RepositoryLayer\\RepositoryLayer.csproj|solutionrelative:repositorylayer\\context\\dappercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1FF023D3-6C22-4066-9539-E30C4FD97829}|RepositoryLayer\\RepositoryLayer.csproj|d:\\c#(lytx)\\bookstoremanagement\\repositorylayer\\repositorylayer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{1FF023D3-6C22-4066-9539-E30C4FD97829}|RepositoryLayer\\RepositoryLayer.csproj|solutionrelative:repositorylayer\\repositorylayer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B03AE655-2319-4854-9649-E90A3CD21CE1}|ModelLayer\\ModelLayer.csproj|d:\\c#(lytx)\\bookstoremanagement\\modellayer\\modellayer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{B03AE655-2319-4854-9649-E90A3CD21CE1}|ModelLayer\\ModelLayer.csproj|solutionrelative:modellayer\\modellayer.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6F21BE2B-DD4F-4ED2-A31A-352C7CD94834}|BookStoreManagement\\BookStoreManagement.csproj|d:\\c#(lytx)\\bookstoremanagement\\bookstoremanagement\\bookstoremanagement.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{6F21BE2B-DD4F-4ED2-A31A-352C7CD94834}|BookStoreManagement\\BookStoreManagement.csproj|solutionrelative:bookstoremanagement\\bookstoremanagement.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B03AE655-2319-4854-9649-E90A3CD21CE1}|ModelLayer\\ModelLayer.csproj|d:\\c#(lytx)\\bookstoremanagement\\modellayer\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B03AE655-2319-4854-9649-E90A3CD21CE1}|ModelLayer\\ModelLayer.csproj|solutionrelative:modellayer\\class1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "BookRepoImpl.cs",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\RepositoryLayer\\Service\\BookRepoImpl.cs",
+              "RelativeDocumentMoniker": "RepositoryLayer\\Service\\BookRepoImpl.cs",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\RepositoryLayer\\Service\\BookRepoImpl.cs",
+              "RelativeToolTip": "RepositoryLayer\\Service\\BookRepoImpl.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAACkAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-05T14:04:46.407Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "UserRepoImpl.cs",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\RepositoryLayer\\Service\\UserRepoImpl.cs",
+              "RelativeDocumentMoniker": "RepositoryLayer\\Service\\UserRepoImpl.cs",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\RepositoryLayer\\Service\\UserRepoImpl.cs",
+              "RelativeToolTip": "RepositoryLayer\\Service\\UserRepoImpl.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAmwCQAAAAuAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-03T02:31:17.078Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "UserRequest.cs",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\ModelLayer\\RequestDto\\UserRequest.cs",
+              "RelativeDocumentMoniker": "ModelLayer\\RequestDto\\UserRequest.cs",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\ModelLayer\\RequestDto\\UserRequest.cs",
+              "RelativeToolTip": "ModelLayer\\RequestDto\\UserRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAkAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-02T12:08:01.045Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserServiceImpl.cs",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\BusinessLayer\\Service\\UserServiceImpl.cs",
+              "RelativeDocumentMoniker": "BusinessLayer\\Service\\UserServiceImpl.cs",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\BusinessLayer\\Service\\UserServiceImpl.cs",
+              "RelativeToolTip": "BusinessLayer\\Service\\UserServiceImpl.cs",
+              "ViewState": "AQIAAD4AAAAAAAAAAAAkwEQAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-03T02:20:23.259Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "ShoppingCartRepoImpl.cs",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\RepositoryLayer\\Service\\ShoppingCartRepoImpl.cs",
+              "RelativeDocumentMoniker": "RepositoryLayer\\Service\\ShoppingCartRepoImpl.cs",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\RepositoryLayer\\Service\\ShoppingCartRepoImpl.cs",
+              "RelativeToolTip": "RepositoryLayer\\Service\\ShoppingCartRepoImpl.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAYwBkAAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T02:19:59.512Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ShoppingCartController.cs",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\BookStoreManagement\\Controllers\\ShoppingCartController.cs",
+              "RelativeDocumentMoniker": "BookStoreManagement\\Controllers\\ShoppingCartController.cs",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\BookStoreManagement\\Controllers\\ShoppingCartController.cs",
+              "RelativeToolTip": "BookStoreManagement\\Controllers\\ShoppingCartController.cs",
+              "ViewState": "AQIAAFAAAAAAAAAAAAAiwGEAAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T02:13:05.204Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CartRequest.cs",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\ModelLayer\\RequestDto\\CartRequest.cs",
+              "RelativeDocumentMoniker": "ModelLayer\\RequestDto\\CartRequest.cs",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\ModelLayer\\RequestDto\\CartRequest.cs",
+              "RelativeToolTip": "ModelLayer\\RequestDto\\CartRequest.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAkAAAAcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T12:04:49.2Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ShoppingCartServiceImpl.cs",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\BusinessLayer\\Service\\ShoppingCartServiceImpl.cs",
+              "RelativeDocumentMoniker": "BusinessLayer\\Service\\ShoppingCartServiceImpl.cs",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\BusinessLayer\\Service\\ShoppingCartServiceImpl.cs",
+              "RelativeToolTip": "BusinessLayer\\Service\\ShoppingCartServiceImpl.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAuwC8AAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T02:18:10.203Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\BookStoreManagement\\Program.cs",
+              "RelativeDocumentMoniker": "BookStoreManagement\\Program.cs",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\BookStoreManagement\\Program.cs",
+              "RelativeToolTip": "BookStoreManagement\\Program.cs",
+              "ViewState": "AQIAABsAAAAAAAAAAAAAACEAAAA1AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-03T02:52:59.042Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "BusinessLayer.csproj",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\BusinessLayer\\BusinessLayer.csproj",
+              "RelativeDocumentMoniker": "BusinessLayer\\BusinessLayer.csproj",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\BusinessLayer\\BusinessLayer.csproj",
+              "RelativeToolTip": "BusinessLayer\\BusinessLayer.csproj",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-05-02T12:11:00.406Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\BookStoreManagement\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "BookStoreManagement\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\BookStoreManagement\\Controllers\\UserController.cs",
+              "RelativeToolTip": "BookStoreManagement\\Controllers\\UserController.cs",
+              "ViewState": "AQIAABoAAAAAAAAAAAAowCQAAAAyAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-02T11:59:55.309Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "BookController.cs",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\BookStoreManagement\\Controllers\\BookController.cs",
+              "RelativeDocumentMoniker": "BookStoreManagement\\Controllers\\BookController.cs",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\BookStoreManagement\\Controllers\\BookController.cs",
+              "RelativeToolTip": "BookStoreManagement\\Controllers\\BookController.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAAAPAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-04T07:35:25.282Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UserEntity.cs",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\ModelLayer\\Entity\\UserEntity.cs",
+              "RelativeDocumentMoniker": "ModelLayer\\Entity\\UserEntity.cs",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\ModelLayer\\Entity\\UserEntity.cs",
+              "RelativeToolTip": "ModelLayer\\Entity\\UserEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAbAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-02T12:03:25.374Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "Book.cs",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\ModelLayer\\Entity\\Book.cs",
+              "RelativeDocumentMoniker": "ModelLayer\\Entity\\Book.cs",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\ModelLayer\\Entity\\Book.cs",
+              "RelativeToolTip": "ModelLayer\\Entity\\Book.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwBQAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-04T08:14:11.089Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "BookResponse.cs",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\ModelLayer\\ResponseDto\\BookResponse.cs",
+              "RelativeDocumentMoniker": "ModelLayer\\ResponseDto\\BookResponse.cs",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\ModelLayer\\ResponseDto\\BookResponse.cs",
+              "RelativeToolTip": "ModelLayer\\ResponseDto\\BookResponse.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAA3wBAAAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T06:35:44.586Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "BookWithQuantity.cs",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\ModelLayer\\RequestDto\\BookWithQuantity.cs",
+              "RelativeDocumentMoniker": "ModelLayer\\RequestDto\\BookWithQuantity.cs",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\ModelLayer\\RequestDto\\BookWithQuantity.cs",
+              "RelativeToolTip": "ModelLayer\\RequestDto\\BookWithQuantity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwA4AAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-07T06:14:33.393Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "CartResponseDto.cs",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\ModelLayer\\ResponseDto\\CartResponseDto.cs",
+              "RelativeDocumentMoniker": "ModelLayer\\ResponseDto\\CartResponseDto.cs",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\ModelLayer\\ResponseDto\\CartResponseDto.cs",
+              "RelativeToolTip": "ModelLayer\\ResponseDto\\CartResponseDto.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAoAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T12:58:20.435Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "IShoppingCartRepo.cs",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\RepositoryLayer\\Interface\\IShoppingCartRepo.cs",
+              "RelativeDocumentMoniker": "RepositoryLayer\\Interface\\IShoppingCartRepo.cs",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\RepositoryLayer\\Interface\\IShoppingCartRepo.cs",
+              "RelativeToolTip": "RepositoryLayer\\Interface\\IShoppingCartRepo.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAAAA8AAABMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T02:19:11.186Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "IShoppingCartService.cs",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\BusinessLayer\\Interface\\IShoppingCartService.cs",
+              "RelativeDocumentMoniker": "BusinessLayer\\Interface\\IShoppingCartService.cs",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\BusinessLayer\\Interface\\IShoppingCartService.cs",
+              "RelativeToolTip": "BusinessLayer\\Interface\\IShoppingCartService.cs",
+              "ViewState": "AQIAAAEAAAAAAAAAAAAIwBAAAABQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T02:13:38.498Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "BookRequest.cs",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\ModelLayer\\RequestDto\\BookRequest.cs",
+              "RelativeDocumentMoniker": "ModelLayer\\RequestDto\\BookRequest.cs",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\ModelLayer\\RequestDto\\BookRequest.cs",
+              "RelativeToolTip": "ModelLayer\\RequestDto\\BookRequest.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAA0AAAAqAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-04T08:16:35.039Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "AddBookRequestDto.cs",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\ModelLayer\\RequestDto\\AddBookRequestDto.cs",
+              "RelativeDocumentMoniker": "ModelLayer\\RequestDto\\AddBookRequestDto.cs",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\ModelLayer\\RequestDto\\AddBookRequestDto.cs",
+              "RelativeToolTip": "ModelLayer\\RequestDto\\AddBookRequestDto.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAqwA4AAAApAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-05T13:54:22.391Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "ShoppingCartEntity.cs",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\ModelLayer\\Entity\\ShoppingCartEntity.cs",
+              "RelativeDocumentMoniker": "ModelLayer\\Entity\\ShoppingCartEntity.cs",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\ModelLayer\\Entity\\ShoppingCartEntity.cs",
+              "RelativeToolTip": "ModelLayer\\Entity\\ShoppingCartEntity.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAgAAAAjAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-06T02:15:46.728Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "IBookService.cs",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\BusinessLayer\\Interface\\IBookService.cs",
+              "RelativeDocumentMoniker": "BusinessLayer\\Interface\\IBookService.cs",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\BusinessLayer\\Interface\\IBookService.cs",
+              "RelativeToolTip": "BusinessLayer\\Interface\\IBookService.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAAABAAAAAmAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-05T13:53:37.755Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "ResponseModel.cs",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\ModelLayer\\ResponseDto\\ResponseModel.cs",
+              "RelativeDocumentMoniker": "ModelLayer\\ResponseDto\\ResponseModel.cs",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\ModelLayer\\ResponseDto\\ResponseModel.cs",
+              "RelativeToolTip": "ModelLayer\\ResponseDto\\ResponseModel.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAqwAsAAAAUAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-02T12:19:08.831Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "UserResponse.cs",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\ModelLayer\\ResponseDto\\UserResponse.cs",
+              "RelativeDocumentMoniker": "ModelLayer\\ResponseDto\\UserResponse.cs",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\ModelLayer\\ResponseDto\\UserResponse.cs",
+              "RelativeToolTip": "ModelLayer\\ResponseDto\\UserResponse.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAqwAgAAAAdAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-02T12:12:34.236Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\BusinessLayer\\Interface\\IUserService.cs",
+              "RelativeDocumentMoniker": "BusinessLayer\\Interface\\IUserService.cs",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\BusinessLayer\\Interface\\IUserService.cs",
+              "RelativeToolTip": "BusinessLayer\\Interface\\IUserService.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAsAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-02T12:06:39.138Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "BookServiceImpl.cs",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\BusinessLayer\\Service\\BookServiceImpl.cs",
+              "RelativeDocumentMoniker": "BusinessLayer\\Service\\BookServiceImpl.cs",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\BusinessLayer\\Service\\BookServiceImpl.cs",
+              "RelativeToolTip": "BusinessLayer\\Service\\BookServiceImpl.cs",
+              "ViewState": "AQIAABgAAAAAAAAAAAAgwC4AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-05T14:05:42.092Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "IBookRepo.cs",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\RepositoryLayer\\Interface\\IBookRepo.cs",
+              "RelativeDocumentMoniker": "RepositoryLayer\\Interface\\IBookRepo.cs",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\RepositoryLayer\\Interface\\IBookRepo.cs",
+              "RelativeToolTip": "RepositoryLayer\\Interface\\IBookRepo.cs",
+              "ViewState": "AQIAAAMAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-05T14:03:56.361Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\BookStoreManagement\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "BookStoreManagement\\appsettings.Development.json",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\BookStoreManagement\\appsettings.Development.json",
+              "RelativeToolTip": "BookStoreManagement\\appsettings.Development.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAABNAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-05-03T02:48:36.778Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "IUserRepo.cs",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\RepositoryLayer\\Interface\\IUserRepo.cs",
+              "RelativeDocumentMoniker": "RepositoryLayer\\Interface\\IUserRepo.cs",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\RepositoryLayer\\Interface\\IUserRepo.cs",
+              "RelativeToolTip": "RepositoryLayer\\Interface\\IUserRepo.cs",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAvwA8AAABBAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-03T02:21:33.962Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "DapperContext.cs",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\RepositoryLayer\\Context\\DapperContext.cs",
+              "RelativeDocumentMoniker": "RepositoryLayer\\Context\\DapperContext.cs",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\RepositoryLayer\\Context\\DapperContext.cs",
+              "RelativeToolTip": "RepositoryLayer\\Context\\DapperContext.cs",
+              "ViewState": "AQIAAAsAAAAAAAAAAAAiwBYAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-03T02:35:02.746Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "UserNotFoundException.cs",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\BusinessLayer\\CustomException\\UserNotFoundException.cs",
+              "RelativeDocumentMoniker": "BusinessLayer\\CustomException\\UserNotFoundException.cs",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\BusinessLayer\\CustomException\\UserNotFoundException.cs",
+              "RelativeToolTip": "BusinessLayer\\CustomException\\UserNotFoundException.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAwAAAAFAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-03T02:43:37.42Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "PasswordMissmatchException.cs",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\BusinessLayer\\CustomException\\PasswordMissmatchException.cs",
+              "RelativeDocumentMoniker": "BusinessLayer\\CustomException\\PasswordMissmatchException.cs",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\BusinessLayer\\CustomException\\PasswordMissmatchException.cs",
+              "RelativeToolTip": "BusinessLayer\\CustomException\\PasswordMissmatchException.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA4AAABJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-03T02:44:29.74Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "MailSenderClass.cs",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\BusinessLayer\\MailSender\\MailSenderClass.cs",
+              "RelativeDocumentMoniker": "BusinessLayer\\MailSender\\MailSenderClass.cs",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\BusinessLayer\\MailSender\\MailSenderClass.cs",
+              "RelativeToolTip": "BusinessLayer\\MailSender\\MailSenderClass.cs",
+              "ViewState": "AQIAAC4AAAAAAAAAAAAgwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-03T02:46:20.864Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "RepositoryLayer.csproj",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\RepositoryLayer\\RepositoryLayer.csproj",
+              "RelativeDocumentMoniker": "RepositoryLayer\\RepositoryLayer.csproj",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\RepositoryLayer\\RepositoryLayer.csproj",
+              "RelativeToolTip": "RepositoryLayer\\RepositoryLayer.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-05-03T02:20:34.999Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "ModelLayer.csproj",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\ModelLayer\\ModelLayer.csproj",
+              "RelativeDocumentMoniker": "ModelLayer\\ModelLayer.csproj",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\ModelLayer\\ModelLayer.csproj",
+              "RelativeToolTip": "ModelLayer\\ModelLayer.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAsAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-05-03T02:22:33.718Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "BookStoreManagement.csproj",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\BookStoreManagement\\BookStoreManagement.csproj",
+              "RelativeDocumentMoniker": "BookStoreManagement\\BookStoreManagement.csproj",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\BookStoreManagement\\BookStoreManagement.csproj",
+              "RelativeToolTip": "BookStoreManagement\\BookStoreManagement.csproj",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-05-02T11:55:10.833Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "Class1.cs",
+              "DocumentMoniker": "D:\\C#(LYTX)\\BookStoreManagement\\ModelLayer\\Class1.cs",
+              "RelativeDocumentMoniker": "ModelLayer\\Class1.cs",
+              "ToolTip": "D:\\C#(LYTX)\\BookStoreManagement\\ModelLayer\\Class1.cs",
+              "RelativeToolTip": "ModelLayer\\Class1.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-02T11:58:13.86Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
